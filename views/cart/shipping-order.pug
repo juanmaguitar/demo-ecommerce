@@ -1,0 +1,30 @@
+.panel.panel-default
+  .panel-heading.text-center
+    h4 Current Cart
+  .panel-body
+    table.table.borderless.list-cart
+      thead
+        tr
+          td
+            strong Your Cart: # item
+          td
+          td
+          td
+          td
+      tbody
+        // foreach ($order->lineItems as $line) or some such thing here
+        each itemCart in cart
+          tr
+            td
+              h5.item-name  #{itemCart.name}
+              .col-md-6
+                .media
+                  a.thumbnail(href='#')
+                    img.media-object(src=itemCart.image, style='width: 72px; height: 72px;')
+                  .media-body
+              .col-md-2
+                span #{itemCart.price}
+              .col-md-2
+                span 1
+              .col-md-2
+                a.btn.btn-danger.remove(href=`/cart/${itemCart.id}`) Remove

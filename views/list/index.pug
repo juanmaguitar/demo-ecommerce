@@ -1,0 +1,20 @@
+extends ../layout
+
+block content
+  h1 List of products
+
+  ul.list-products.list-unstyled
+    each product in products
+      li
+        p
+          img(src=product.image)
+          span #{product.name}
+          span.price #{product.price}
+          form(action="/cart", method="POST")
+            input(name="id", value=product.id, type="hidden")
+            input(name="name", value=product.name, type="hidden")
+            input(name="price", value=product.price, type="hidden")
+            input(name="image", value=product.image, type="hidden")
+            button.btn.btn-primary Add To Cart
+
+
