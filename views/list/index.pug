@@ -7,14 +7,14 @@ block content
     each product in products
       li
         p
-          img(src=product.image)
-          span #{product.name}
+          img(src=product.image, width="100%" )
+          span #{product.productName}
           span.price #{product.price}
-          form(action="/cart", method="POST")
+          //form(action="/cart-native", method="POST")
+          form.add-to-cart-ajax(action="/cart-ajax", method="POST")
+            label(for="quantity") Quantity
+            input(name="quantity", id="quantity", type="number")
             input(name="id", value=product.id, type="hidden")
-            input(name="name", value=product.name, type="hidden")
-            input(name="price", value=product.price, type="hidden")
-            input(name="image", value=product.image, type="hidden")
             button.btn.btn-primary Add To Cart
 
 

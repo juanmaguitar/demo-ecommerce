@@ -16,5 +16,8 @@
     "express-session": "^1.15.2",
     "pug": "^2.0.0-rc.1",
     "session-file-store": "^1.0.0"
+  },
+  "devDependencies": {
+    "faker": "^4.1.0"
   }
 }
